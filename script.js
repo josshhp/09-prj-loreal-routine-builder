@@ -10,8 +10,8 @@ const clearSelectedProductsBtn = document.getElementById(
   "clearSelectedProducts",
 );
 const userInput = document.getElementById("userInput");
-CLOUDFLARE_WORKER_URL = "https://broken-pond-2029.josh-pugh4.workers.dev/";
-
+const CLOUDFLARE_WORKER_URL =
+  "https://broken-pond-2029.josh-pugh4.workers.dev/";
 
 /* Keep selected products in memory while the page is open */
 const selectedProducts = [];
@@ -238,13 +238,13 @@ async function refreshVisibleProducts() {
 }
 
 async function requestChatCompletion(messages) {
-  if (!window.CLOUDFLARE_WORKER_URL) {
+  if (!CLOUDFLARE_WORKER_URL) {
     throw new Error(
-      "Missing CLOUDFLARE_WORKER_URL. Add your Worker URL in secrets.js.",
+      "Missing CLOUDFLARE_WORKER_URL. Add your Worker URL in script.js.",
     );
   }
 
-  const response = await fetch(window.CLOUDFLARE_WORKER_URL, {
+  const response = await fetch(CLOUDFLARE_WORKER_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
