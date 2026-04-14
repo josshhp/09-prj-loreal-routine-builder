@@ -10,6 +10,8 @@ const clearSelectedProductsBtn = document.getElementById(
   "clearSelectedProducts",
 );
 const userInput = document.getElementById("userInput");
+CLOUDFLARE_WORKER_URL = "https://broken-pond-2029.josh-pugh4.workers.dev/";
+
 
 /* Keep selected products in memory while the page is open */
 const selectedProducts = [];
